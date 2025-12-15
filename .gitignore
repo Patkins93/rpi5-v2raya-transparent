@@ -1,0 +1,91 @@
+# ===== Secrets & Keys =====
+.env
+*.key
+*.pem
+id_rsa*
+authorized_keys
+raspissh*
+
+# ===== Docker data =====
+data/
+docker-compose.override.yml
+
+# ===== System =====
+.DS_Store
+Thumbs.db
+
+# ===== Backups =====
+*.bak
+*.backup
+*~
+
+# ===== Logs =====
+*.log
+
+# ===== Temp =====
+tmp/
+temp/
+.cache/
+
+# ===== EXCLUDE ALL OLD FILES (keep only release structure) =====
+
+# All PowerShell scripts (helper scripts for Windows, not for users)
+*.ps1
+
+# All old bash scripts (except those in scripts/ folder)
+/*.sh
+
+# All old MD files in root (except main ones)
+/*_*.md
+/CASA_OS_SETUP.md
+/COMPLETE_SYSTEM_EXPLANATION.md
+/CRITICAL_CHECKS.md
+/FINAL_*.md
+/FIX_*.md
+/HDD_RECOVERY_GUIDE.md
+/IMPLEMENTATION_SUMMARY.md
+/INSTALL_*.md
+/PIHOLE_V2RAY_SETUP.md
+/QUICK_*.md
+/RECOVERY_INSTRUCTIONS.md
+/SAFE_EJECT_INFO.md
+/SD_CARD_RECOVERY.md
+/SIMPLE_SETUP.md
+/SOLUTION_*.md
+/SUCCESS_CHECKLIST.md
+/UMBREL_*.md
+/V2RAYA_*.md
+/WINDOWS_RECOVERY.md
+/TEST_*.md
+/setup-*.md
+/clear-dns-cache-windows.md
+/БЫСТРОЕ*.md
+/КАК_*.md
+/НАСТРОЙКА_*.md
+/ПРОБЛЕМА*.md
+/ПРОМПТ*.md
+/VPN_*.md
+
+# Config files in root (keep only in configs/)
+/dnsmasq-proxy.conf
+/*.json
+/*.service
+/*.conf
+
+# Text files
+/*.txt
+/known_hosts.txt
+
+# Old folders
+/Ubuntu server/
+/Youtube+Pi/
+
+# ===== KEEP ONLY (whitelist): =====
+# ✅ /README.md
+# ✅ /.gitignore
+# ✅ /compose.yaml
+# ✅ /env.example
+# ✅ /RELEASE_NOTES.md
+# ✅ /scripts/ (install.sh, apply-*.sh, quick-check.sh, update.sh, show-info.sh, dns-ipset-test.sh)
+# ✅ /configs/ (05-vpnlist.conf)
+# ✅ /docs/ (LEGACY_RECOVERY.md, PUBLISH_TO_GITHUB.md, HOW_TO_RELEASE.md)

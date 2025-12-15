@@ -1,0 +1,33 @@
+# Minimal working compose for Raspberry Pi OS (Linux)
+# Runs in host network because:
+# - Pi-hole must bind UDP/TCP 53 on the host
+# - dnsmasq ipset integration is simplest in host netns
+# - v2rayA transparent proxy (TProxy) needs NET_ADMIN and host-level routing
+
+services:
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+    environment:
+      TZ: "UTC"
+      WEBPASSWORD: "${PIHOLE_WEBPASSWORD:-}"  # optional
+      DNSMASQ_LISTENING: all
+    volumes:
+      - ./data/pihole/etc-pihole:/etc/pihole
+      - ./data/pihole/etc-dnsmasq.d:/etc/dnsmasq.d
+    restart: unless-stopped
+
+  v2raya:
+    image: mzz2017/v2raya:latest
+    container_name: v2raya
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - ./data/v2raya:/etc/v2raya
+    restart: unless-stopped
+

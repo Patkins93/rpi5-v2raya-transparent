@@ -37,6 +37,8 @@ temp/
 
 # All old MD files in root (except main ones)
 /*_*.md
+# But keep RELEASE_NOTES.md
+!RELEASE_NOTES.md
 /CASA_OS_SETUP.md
 /COMPLETE_SYSTEM_EXPLANATION.md
 /CRITICAL_CHECKS.md
